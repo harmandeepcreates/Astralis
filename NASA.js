@@ -1,36 +1,27 @@
+const apiKey = "YOUR_API_KEY_HERE";
 
-const apiKey = "Fu29biLdVIWCA2gedYy10sLfhUWmqfcd3Dv10JHi";
+fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&thumbs=true`)
+    .then(response => response.json())
+    .then(data => {
 
-const url =
-`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
+        console.log(data);
 
-fetch(url)
-.then(response => response.json())
-.then(data => {
+        document.getElementById("apod-title").textContent = data.title;
+        document.getElementById("apod-description").textContent = data.explanation;
 
-   if (data.media_type === "image") {
-    document.getElementById("apod-image").src = data.url;
-}
-else {
-    document.getElementById("apod-image").alt =
-        "Today's APOD is a video.";
-}
+        if (data.media_type === "image") {
+            document.getElementById("apod-image").src = data.url;
+        }
 
-    document.getElementById("apod-title").textContent =
-        data.title;
+        else if (data.media_type === "video") {
+            document.getElementById("apod-image").src =
+                data.thumbnail_url || "";
+        }
+    })
+    .catch(error => {
+        console.error(error);
 
-    document.getElementById("apod-description").textContent =
-        data.explanation;
+        document.getElementById("apod-title").textContent =
+            "Unable to load APOD";
 
-})
-.catch(error => {
-
-    console.log(error);
-
-    document.getElementById("apod-title").textContent =
-        "Unable to load APOD";
-
-    document.getElementById("apod-description").textContent =
-        "Please try again later.";
-
-});
+        document.getElementById("apod-description").
