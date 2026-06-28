@@ -1,4 +1,4 @@
-const apiKey = "Fu29biLdVIWCA2gedYy10sLfhUWmqfcd3Dv10JHi";
+const apiKey = "DEMO_KEY";
 
 fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&thumbs=true`)
     .then(response => response.json())
