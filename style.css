@@ -4,12 +4,11 @@ body {
     margin: 0;
     padding: 40px 8%;
     font-family: 'Inter', sans-serif;
-    background-image: url("spacepulse.png");
+    background-image: url("black.png");
     color: #F5F7FA;
     line-height: 1.8;
     text-align: center;
 }
-
 
 /* Logo */
 .logo {
@@ -103,6 +102,45 @@ button {
     transform: translateY(-4px);
 }
 
+#nasa-hub {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.nasa-grid {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+
+.nasa-card a {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 8px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+.nasa-card h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+
+.nasa-card a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 /* Feature Cards */
 .feature-card {
     display: inline-block;
@@ -129,26 +167,6 @@ button {
     margin-top: 10px;
     color: #CBD5E1;
     font-size: 0.95rem;
-}
-/* NASA Mission Buttons */
-.mission-btn {
-    display: inline-block;
-    background: rgba(255,255,255,0.05);
-    color: #F5F7FA;
-    text-decoration: none;
-    padding: 18px 30px;
-    margin: 12px;
-    border-radius: 18px;
-    min-width: 220px;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.mission-btn:hover {
-    transform: translateY(-5px);
-    background: rgba(56, 189, 248, 0.15);
-    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.25);
 }
 #apod-image {
     width: 100%;
